@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10f; // Speed of the player movement
     public float boundaryPadding = 0.5f; // Padding to keep the player within the screen bounds
 
+
     private Rigidbody2D rb;
 
     void Start()
@@ -38,4 +39,5 @@ public class PlayerMovement : MonoBehaviour
         // Move the player
         rb.MovePosition(newPosition);
     }
+
 }
