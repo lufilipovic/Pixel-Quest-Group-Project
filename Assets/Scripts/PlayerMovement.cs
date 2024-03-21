@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        // Freeze rotation along the Z-axis
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     private void Update()
