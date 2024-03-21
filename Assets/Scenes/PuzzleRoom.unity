@@ -213,6 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 164376899}
   - component: {fileID: 164376898}
+  - component: {fileID: 164376900}
   m_Layer: 0
   m_Name: MirrorObject
   m_TagString: Untagged
@@ -287,6 +288,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &164376900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164376897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88901e1fc9011467796e5b5189a0246c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 2
+  interactableObject: {fileID: 164376897}
 --- !u!1 &207345389
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +553,6 @@ GameObject:
   m_Component:
   - component: {fileID: 843598974}
   - component: {fileID: 843598973}
-  - component: {fileID: 843598972}
   - component: {fileID: 843598975}
   m_Layer: 0
   m_Name: PickUpObject
@@ -547,32 +561,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &843598972
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843598971}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.38933706, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 5.12}
-    newSize: {x: 10.24, y: 5.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 8.348933, y: 5.12}
-  m_EdgeRadius: 0
 --- !u!212 &843598973
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -652,6 +640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9deda13ee26864c3b87a05e8ee90a283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionRange: 2
 --- !u!1 &855440796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,7 +1005,7 @@ GameObject:
   - component: {fileID: 923730460}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1159,6 +1148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 998509765}
   - component: {fileID: 998509764}
+  - component: {fileID: 998509766}
   m_Layer: 0
   m_Name: StatueObject
   m_TagString: Untagged
@@ -1233,6 +1223,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &998509766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998509763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88901e1fc9011467796e5b5189a0246c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 2
+  interactableObject: {fileID: 998509763}
 --- !u!1 &999164752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,6 +1600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1244541873}
   - component: {fileID: 1244541872}
+  - component: {fileID: 1244541874}
   m_Layer: 0
   m_Name: StatueObject
   m_TagString: Untagged
@@ -1670,6 +1675,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1244541874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244541871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88901e1fc9011467796e5b5189a0246c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 2
+  interactableObject: {fileID: 1244541871}
 --- !u!1 &1249899248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,6 +2036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1716676313}
   - component: {fileID: 1716676312}
+  - component: {fileID: 1716676314}
   m_Layer: 0
   m_Name: PlantObject
   m_TagString: Untagged
@@ -2091,6 +2111,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1716676314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716676311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88901e1fc9011467796e5b5189a0246c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 2
+  interactableObject: {fileID: 1716676311}
 --- !u!1 &1723039765
 GameObject:
   m_ObjectHideFlags: 0

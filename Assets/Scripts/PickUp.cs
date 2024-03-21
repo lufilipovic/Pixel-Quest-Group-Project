@@ -4,30 +4,40 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
+    public float interactionRange = 2f;
+
     private bool isPickedUp = false;
+    private GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void Update()
     {
         if (!isPickedUp && Input.GetKeyDown(KeyCode.E))
         {
-            // Check if the player is in range (you might want to implement a range check)
-            // For example, you can use Physics2D.OverlapCircle to detect if the player is nearby
-            // or you can use a trigger collider on the player
-
-            // For now, let's assume the player is in range to pick up the object
-            PickUpObject();
+            // Check if the player is in range to pick up the object
+            if (IsPlayerInRange())
+            {
+                PickUpObject();
+            }
         }
+    }
+
+    private bool IsPlayerInRange()
+    {
+        // Calculate the distance between the player and the object
+        float distance = Vector2.Distance(transform.position, player.transform.position);
+        return distance <= interactionRange;
     }
 
     private void PickUpObject()
     {
         isPickedUp = true;
-        // Disable rendering and collider so the object is not visible or interactable
+        // Disable rendering so the object is not visible
         GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<Collider2D>().enabled = false;
         print("Object picked up " + isPickedUp);
-
-        // Add logic here to update player's inventory or save the state of the picked-up object
-        // For example, you could add the object to a list in the player's inventory
     }
 }

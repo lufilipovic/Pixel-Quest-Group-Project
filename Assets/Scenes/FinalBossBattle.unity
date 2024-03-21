@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 116037265}
   - component: {fileID: 116037264}
+  - component: {fileID: 116037266}
   m_Layer: 0
   m_Name: ChestObject
   m_TagString: Untagged
@@ -207,6 +208,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &116037266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116037263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88901e1fc9011467796e5b5189a0246c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 2
+  interactableObject: {fileID: 116037263}
 --- !u!1 &235023706
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +232,8 @@ GameObject:
   m_Component:
   - component: {fileID: 235023708}
   - component: {fileID: 235023707}
+  - component: {fileID: 235023709}
+  - component: {fileID: 235023710}
   m_Layer: 0
   m_Name: BossEnemy
   m_TagString: Untagged
@@ -291,6 +308,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &235023709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235023706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88901e1fc9011467796e5b5189a0246c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 2
+  interactableObject: {fileID: 0}
+--- !u!114 &235023710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235023706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88901e1fc9011467796e5b5189a0246c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 2
+  interactableObject: {fileID: 235023706}
 --- !u!1 &391553266
 GameObject:
   m_ObjectHideFlags: 0
