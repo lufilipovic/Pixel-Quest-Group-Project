@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScreen.unity
     guid: e831597fb5bb131438100fb4b3c343a6
   - enabled: 1
+    path: Assets/Scenes/IntroCutscene.unity
+    guid: 22d62bf773f05d644be50c2bd99f3a4b
+  - enabled: 1
     path: Assets/Scenes/EntranceLocation.unity
     guid: c7087852aa6740d40a1c6ab778b70a79
+  - enabled: 1
+    path: Assets/Scenes/PuzzleRoom.unity
+    guid: 2697e341d6d165944b0256d8e4be95ee
+  - enabled: 1
+    path: Assets/Scenes/MiniBossBattle.unity
+    guid: 30f2a150b47d718409b8067fb576a9e8
+  - enabled: 1
+    path: Assets/Scenes/FinalBossBattle.unity
+    guid: 5ef5495fb6352ca4dafc5b4e5833c06f
   m_configObjects: {}
