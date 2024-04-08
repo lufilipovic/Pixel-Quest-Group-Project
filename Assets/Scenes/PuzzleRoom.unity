@@ -641,6 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionRange: 2
+  itemName: Puzzle Key
 --- !u!1 &855440796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,6 +2506,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776203021}
   m_CullTransparentMesh: 1
+--- !u!1 &1797208322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2314520610103190595, guid: 65104a8fc20ee4e15a998213eb61d8ed, type: 3}
+  m_PrefabInstance: {fileID: 2314520609751197272}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2314520609751197272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2564,7 +2570,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2025207627859007654, guid: 65104a8fc20ee4e15a998213eb61d8ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65104a8fc20ee4e15a998213eb61d8ed, type: 3}
 --- !u!4 &2314520609751197273 stripped
 Transform:
@@ -2672,3 +2679,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1e39d1cf770448478dd33953bde5f6a, type: 3}
+--- !u!114 &2314520609751197278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797208322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 504e32af7574549b69a13717593b3657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
