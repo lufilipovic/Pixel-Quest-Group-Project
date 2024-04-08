@@ -301,6 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionRange: 2
+  itemName: Boss Key
 --- !u!212 &413053962
 SpriteRenderer:
   m_ObjectHideFlags: 0
