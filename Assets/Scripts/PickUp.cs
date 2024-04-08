@@ -5,7 +5,9 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public float interactionRange = 2f;
+    public string itemName; // Name of the item
 
+    private static List<string> inventory = new List<string>(); // Static list to hold picked up items
     private bool isPickedUp = false;
     private GameObject player;
 
@@ -22,6 +24,7 @@ public class PickUp : MonoBehaviour
             if (IsPlayerInRange())
             {
                 PickUpObject();
+                PrintInventory(); // Print inventory each time something is picked up
             }
         }
     }
@@ -38,6 +41,23 @@ public class PickUp : MonoBehaviour
         isPickedUp = true;
         // Disable rendering so the object is not visible
         GetComponent<SpriteRenderer>().enabled = false;
-        print("Object picked up " + isPickedUp);
+        inventory.Add(itemName); // Add the item to the inventory
+        //print(itemName + " picked up");
+    }
+
+    // Static method to access the inventory from other scripts
+    public static List<string> GetInventory()
+    {
+        return inventory;
+    }
+
+    // Method to print inventory contents
+    private void PrintInventory()
+    {
+        print("Inventory contents:");
+        foreach (string item in inventory)
+        {
+            print("- " + item);
+        }
     }
 }

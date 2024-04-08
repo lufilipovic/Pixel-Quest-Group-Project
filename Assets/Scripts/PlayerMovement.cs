@@ -28,5 +28,16 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = movementDirection * movementSpeed;
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    { 
+
+        var dialogScript = other.gameObject.GetComponent<DialogueSystem>();
+        if (dialogScript)
+        {
+            dialogScript.StartDialog();
+        }
+
+    }
 }
 
