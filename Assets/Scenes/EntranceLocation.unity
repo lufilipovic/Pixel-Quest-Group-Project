@@ -300,7 +300,7 @@ RectTransform:
   m_Children:
   - {fileID: 1890764315}
   m_Father: {fileID: 1803861634}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -653,7 +653,7 @@ RectTransform:
   - {fileID: 1258054737}
   - {fileID: 1520219582}
   m_Father: {fileID: 1803861634}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1070627703}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NPCVillager, Assembly-CSharp
         m_MethodName: NextLine
         m_Mode: 1
@@ -1868,8 +1868,9 @@ RectTransform:
   m_Children:
   - {fileID: 1111063287}
   - {fileID: 1687431270}
-  - {fileID: 540433835}
   - {fileID: 91342964}
+  - {fileID: 540433835}
+  - {fileID: 930403981}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1916,7 +1917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2314520610103190596, guid: 65104a8fc20ee4e15a998213eb61d8ed, type: 3}
       propertyPath: movementSpeed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2314520610103190598, guid: 65104a8fc20ee4e15a998213eb61d8ed, type: 3}
       propertyPath: m_Mass

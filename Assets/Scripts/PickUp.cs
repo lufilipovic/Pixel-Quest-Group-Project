@@ -6,10 +6,12 @@ public class PickUp : MonoBehaviour
 {
     public float interactionRange = 2f;
     public string itemName; // Name of the item
+    public Item item;
 
-    private static List<string> inventory = new List<string>(); // Static list to hold picked up items
+    private static List<Item> inventory = new List<Item>(); // Static list to hold picked up items
     private bool isPickedUp = false;
     private GameObject player;
+
 
     private void Start()
     {
@@ -41,12 +43,12 @@ public class PickUp : MonoBehaviour
         isPickedUp = true;
         // Disable rendering so the object is not visible
         GetComponent<SpriteRenderer>().enabled = false;
-        inventory.Add(itemName); // Add the item to the inventory
+        inventory.Add(item); // Add the item to the inventory
         //print(itemName + " picked up");
     }
 
     // Static method to access the inventory from other scripts
-    public static List<string> GetInventory()
+    public static List<Item> GetInventory()
     {
         return inventory;
     }
@@ -55,9 +57,17 @@ public class PickUp : MonoBehaviour
     private void PrintInventory()
     {
         print("Inventory contents:");
-        foreach (string item in inventory)
+        foreach (Item item in inventory)
         {
             print("- " + item);
         }
     }
+
+    //public void UpdateUI()
+    //{
+    //    for(int i = 0; i < inventory.Count; i++)
+    //    {
+
+    //    }
+    //}
 }
