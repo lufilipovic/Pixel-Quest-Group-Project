@@ -42,6 +42,7 @@ public class PickUp : MonoBehaviour
     {
         isPickedUp = true;
         // Disable rendering so the object is not visible
+        item.isPickedUp = true;
         GetComponent<SpriteRenderer>().enabled = false;
         inventory.Add(item); // Add the item to the inventory
         //print(itemName + " picked up");
@@ -63,11 +64,16 @@ public class PickUp : MonoBehaviour
         }
     }
 
-    //public void UpdateUI()
-    //{
-    //    for(int i = 0; i < inventory.Count; i++)
-    //    {
-
-    //    }
-    //}
+    public static List<Item> GetPickedUpItems()
+    {
+        List<Item> pickedUpItems = new List<Item>();
+        foreach (Item item in inventory)
+        {
+            if (item.isPickedUp)
+            {
+                pickedUpItems.Add(item);
+            }
+        }
+        return pickedUpItems;
+    }
 }
