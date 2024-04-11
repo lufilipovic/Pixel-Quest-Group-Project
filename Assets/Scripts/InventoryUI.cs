@@ -1,27 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    public GameObject inventoryPanel; // Reference to the inventory panel
+    public Transform itemsParent;
+    public GameObject inventoryUI;
 
-    private bool inventoryOpen = false; // Flag to track if the inventory is open
+    Inventory inventory;
 
-    private void Start()
+    InventorySlot[] slots;
+
+    void Start()
     {
-        // Disable the inventory panel initially
-        inventoryPanel.SetActive(false);
+        inventory = Inventory.instance;
+        inventory.onItemChangedCallback += UpdateUI;
+
+        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
     }
 
-    private void Update()
+    void Update()
     {
-        // Check if the "i" key is pressed
+        // Check if the "I" key is pressed
         if (Input.GetKeyDown(KeyCode.I))
         {
-            // Toggle the inventory panel
-            inventoryOpen = !inventoryOpen;
-            inventoryPanel.SetActive(inventoryOpen);
+            // Toggle the visibility of the inventory UI
+            inventoryUI.SetActive(!inventoryUI.activeSelf);
+            // Update the UI
+            UpdateUI();
+        }
+    }
+
+    void UpdateUI()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (i < inventory.items.Count)
+            {
+                slots[i].AddItem(inventory.items[i]);
+            }
+            else
+            {
+                slots[i].ClearSlot();
+            }
         }
     }
 }
