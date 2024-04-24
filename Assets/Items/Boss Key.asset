@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Boss Key
   m_EditorClassIdentifier: 
   name: Boss Key
-  icon: {fileID: 21300000, guid: 15185b20f1c4b8c458e275908b24ed82, type: 3}
+  icon: {fileID: 21300000, guid: 7722896b69f484953adda31dcce8eac7, type: 3}
   isPickedUp: 1
   isDefaultItem: 0
