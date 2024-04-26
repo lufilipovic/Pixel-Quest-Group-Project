@@ -21,7 +21,7 @@ public class NPCVillager : MonoBehaviour
         {
             if (dialoguePanel.activeInHierarchy)
             {
-                zeroText();
+                ZeroText();
             }
             else
             {
@@ -32,10 +32,11 @@ public class NPCVillager : MonoBehaviour
         if(dialogueText.text == dialogue[index])
         {
             contButton.SetActive(true);
+
         }
     }
 
-    public void zeroText()
+    public void ZeroText()
     {
         dialogueText.text = "";
         index = 0;
@@ -64,7 +65,7 @@ public class NPCVillager : MonoBehaviour
         }
         else
         { 
-            zeroText(); 
+            ZeroText();
         }
     }
 
@@ -81,7 +82,7 @@ public class NPCVillager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
-            zeroText();
+            ZeroText();
         }
     }
 }
