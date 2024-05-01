@@ -40,7 +40,21 @@ public class Shooter : MonoBehaviour
         // Destroy the projectile after a specified period of time
         Destroy(projectile, projectileLifetime);
     }
+
+    // Detect collisions between projectiles and edge colliders
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<EdgeCollider2D>() != null)
+        {
+            Destroy(gameObject); // Destroy the projectile
+        }
+    }
 }
+
+
+
+
+
 
 
 
