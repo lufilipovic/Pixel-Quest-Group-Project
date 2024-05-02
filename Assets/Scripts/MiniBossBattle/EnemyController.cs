@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     private EdgeCollider2D[] edgeColliders; // Array to store all edge colliders in the scene
     private bool isFollowingPlayer = false; // Flag to track if the enemy is following the player
     private float fireTimer = 0f; // Timer to control firing rate
+    public float projectileLifetime = 1.5f;
 
     void Start()
     {
@@ -92,8 +93,11 @@ public class EnemyController : MonoBehaviour
         {
             Debug.LogError("Rigidbody2D component not found on projectile prefab.");
         }
+
+        Destroy(projectile, projectileLifetime);
     }
 }
+
 
 
 
