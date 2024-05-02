@@ -21,8 +21,8 @@ public class PlayerBehaviour : MonoBehaviour
         // Check if the collided object has a Rigidbody2D component
         Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
 
-        // If it does, it's likely an enemy projectile, destroy it
-        if (rb != null)
+        // Check if the collided object is a projectile and not an enemy
+        if (rb != null && collision.gameObject.tag != "Enemy")
         {
             Destroy(collision.gameObject);
             print("Enemy projectile hit the player!");
@@ -36,5 +36,6 @@ public class PlayerBehaviour : MonoBehaviour
         //print("Player is hit!");
     }
 }
+
 
 
