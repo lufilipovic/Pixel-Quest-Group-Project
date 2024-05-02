@@ -10,11 +10,11 @@ public class EnemyController : MonoBehaviour
     public float fireRate = 1f; // Rate of fire in shots per second
     public float followDistance = 10f; // Distance at which the enemy starts following the player
     public float stopDistance = 1f; // Distance at which the enemy stops following the player
+    public float projectileLifetime = 1.5f;
 
     private EdgeCollider2D[] edgeColliders; // Array to store all edge colliders in the scene
     private bool isFollowingPlayer = false; // Flag to track if the enemy is following the player
     private float fireTimer = 0f; // Timer to control firing rate
-    public float projectileLifetime = 1.5f;
 
     void Start()
     {

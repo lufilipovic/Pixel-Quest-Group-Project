@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    public int maxLives = 3; // Maximum number of lives the player can have
+    private int currentLives; // Current number of lives
+
     // Start is called before the first frame update
     void Start()
     {
-
+        currentLives = maxLives; // Set current lives to maximum lives at the start
     }
 
     // Update is called once per frame
@@ -26,6 +29,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             Destroy(collision.gameObject);
             print("Enemy projectile hit the player!");
+            TakeDamage(); // Decrease player lives
         }
     }
 
@@ -33,9 +37,22 @@ public class PlayerBehaviour : MonoBehaviour
     // Then it doesn't physically react to hits but still detects them
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //print("Player is hit!");
+        
+    }
+
+    // Method to handle taking damage and checking for destruction
+    void TakeDamage()
+    {
+        currentLives--; // Decrease the current lives
+        if (currentLives <= 0)
+        {
+            // If lives reach zero or below, destroy the player object
+            Destroy(gameObject);
+            // You might want to add some game over logic here as well
+        }
     }
 }
+
 
 
 
