@@ -1,16 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyBehaviour : MonoBehaviour
 {
     public int maxLives = 3; // Maximum number of lives the enemy can have
     private int currentLives; // Current number of lives
 
+    public Image[] hearts; // Array to hold heart images for the health bar
+
     // Start is called before the first frame update
     void Start()
     {
         currentLives = maxLives; // Set current lives to maximum lives at the start
+        UpdateHealthBar(); // Update the health bar at the start
     }
 
     // Update is called once per frame
@@ -19,19 +21,13 @@ public class EnemyBehaviour : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
-
-    // This is called if the Collider on the game object has "Is Trigger" checked.
-    // Then it doesn't physically react to hits but still detects them
     private void OnTriggerEnter2D(Collider2D collision)
     {
         print("Enemy is hit!");
         // For triggers, decrease the current lives
         TakeDamage();
         Destroy(collision.gameObject); // Destroy the projectile
+        UpdateHealthBar(); // Update the health bar after taking damage
     }
 
     // Method to handle taking damage and checking for destruction
@@ -44,5 +40,21 @@ public class EnemyBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    // Method to update the health bar
+    void UpdateHealthBar()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            // Activate or deactivate heart images based on the current number of lives
+            hearts[i].gameObject.SetActive(i < currentLives);
+        }
+    }
 }
+
+
+
+
+
+
 
