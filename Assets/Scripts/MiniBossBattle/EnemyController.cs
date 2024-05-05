@@ -4,11 +4,11 @@ public class EnemyController : MonoBehaviour
 {
     public Transform player; // Reference to the player's transform
     public GameObject projectilePrefab; // Reference to the projectile prefab
-    public Transform shootPoint; // Reference to the point from where projectiles will be shot
+    //public Transform shootPoint; // Reference to the point from where projectiles will be shot
     public float moveSpeed = 0.4f; // Speed at which the enemy moves
     public float projectileSpeed = 10f; // Speed of the projectile
     public float fireRate = 1f; // Rate of fire in shots per second
-    public float followDistance = 10f; // Distance at which the enemy starts following the player
+    public float followDistance = 4f; // Distance at which the enemy starts following the player
     public float stopDistance = 1f; // Distance at which the enemy stops following the player
     public float projectileLifetime = 1.5f;
 
@@ -78,10 +78,10 @@ public class EnemyController : MonoBehaviour
     void Fire()
     {
         // Calculate the direction towards the player
-        Vector3 shootDirection = (player.position - shootPoint.position).normalized;
+        Vector3 shootDirection = (player.position - transform.position).normalized;
 
-        // Instantiate the projectile from the shootPoint position
-        GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+        // Instantiate the projectile from the enemy's position
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
         // Get the Rigidbody2D component of the projectile and set its velocity
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();

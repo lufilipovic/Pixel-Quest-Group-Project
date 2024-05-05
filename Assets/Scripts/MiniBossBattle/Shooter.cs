@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Shooter : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Change input to your preference
+        if (SceneManager.GetActiveScene().name == "MiniBossBattle" && Input.GetMouseButtonDown(0))
         {
             Shoot();
         }
@@ -37,16 +38,7 @@ public class Shooter : MonoBehaviour
 
         // Destroy the projectile after a specified period of time
         Destroy(projectile, projectileLifetime);
-    }
-
-    // Detect collisions between projectiles and edge colliders
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.GetComponent<EdgeCollider2D>() != null)
-        {
-            Destroy(gameObject); // Destroy the projectile
-        }
-    }
+    } 
 }
 
 
