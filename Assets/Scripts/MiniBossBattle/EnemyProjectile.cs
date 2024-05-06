@@ -2,14 +2,25 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.GetComponent<EdgeCollider2D>() != null)
+        // Check if the projectile collides with an edge collider
+        if (collision.GetComponent<EdgeCollider2D>() != null)
         {
-            Destroy(gameObject); // Destroy the projectile
+            // Destroy the projectile
+            Destroy(gameObject);
         }
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 

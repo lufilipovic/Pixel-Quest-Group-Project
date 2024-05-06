@@ -15,21 +15,26 @@ public class PlayerBehaviour : MonoBehaviour
         UpdateHealthBar(); // Update the health bar at the start
     }
 
-    // Update is called once per frame
-    void Update()
+    // Method to update the health bar
+    void UpdateHealthBar()
     {
-
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            // Activate or deactivate heart images based on the current number of lives
+            hearts[i].gameObject.SetActive(i < currentLives);
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    // OnTriggerEnter2D is called when the Collider2D other enters the trigger
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the collided object has a Rigidbody2D component
-        Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+        // Check if the triggered object has a Rigidbody2D component
+        Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
 
-        // Check if the collided object is a projectile and not an enemy
-        if (rb != null && collision.gameObject.tag != "Enemy")
+        // Check if the triggered object is a projectile and not an enemy
+        if (rb != null && other.gameObject.CompareTag("EnemyProjectile"))
         {
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             print("Enemy projectile hit the player!");
             TakeDamage(); // Decrease player lives
             UpdateHealthBar(); // Update the health bar after taking damage
@@ -47,17 +52,9 @@ public class PlayerBehaviour : MonoBehaviour
             // You might want to add some game over logic here as well
         }
     }
-
-    // Method to update the health bar
-    void UpdateHealthBar()
-    {
-        for (int i = 0; i < hearts.Length; i++)
-        {
-            // Activate or deactivate heart images based on the current number of lives
-            hearts[i].gameObject.SetActive(i < currentLives);
-        }
-    }
 }
+
+
 
 
 

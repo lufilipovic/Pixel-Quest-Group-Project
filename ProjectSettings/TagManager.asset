@@ -6,6 +6,9 @@ TagManager:
   tags:
   - ScreenBoundary
   - Enemy
+  - EdgeCollider
+  - PlayerProjectile
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX

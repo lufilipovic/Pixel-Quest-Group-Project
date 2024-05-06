@@ -23,11 +23,15 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("Enemy is hit!");
-        // For triggers, decrease the current lives
-        TakeDamage();
-        Destroy(collision.gameObject); // Destroy the projectile
-        UpdateHealthBar(); // Update the health bar after taking damage
+        // Check if the collision is with a player projectile
+        if (collision.CompareTag("PlayerProjectile"))
+        {
+            print("Enemy is hit!");
+            // For player projectiles, decrease the current lives
+            TakeDamage();
+            Destroy(collision.gameObject); // Destroy the projectile
+            UpdateHealthBar(); // Update the health bar after taking damage
+        }
     }
 
     // Method to handle taking damage and checking for destruction
@@ -51,6 +55,8 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 }
+
+
 
 
 
