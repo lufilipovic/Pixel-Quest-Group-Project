@@ -1141,6 +1141,7 @@ MonoBehaviour:
   followDistance: 4
   stopDistance: 1
   projectileLifetime: 1.5
+  shootSound: {fileID: 8300000, guid: 2e77c9320ac77a7419b23cc1332850f0, type: 3}
 --- !u!114 &848559055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1158,6 +1159,7 @@ MonoBehaviour:
   - {fileID: 1399981081}
   - {fileID: 1380163000}
   - {fileID: 1144056499}
+  hitSound: {fileID: 8300000, guid: 32213d7cccbe3704ab5fe722a07f1961, type: 3}
 --- !u!50 &848559056
 Rigidbody2D:
   serializedVersion: 4
@@ -3548,6 +3550,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6792042989827225386, guid: 65104a8fc20ee4e15a998213eb61d8ed, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 37477ca2676f93b4e95bd3f65595d596, type: 3}
+    - target: {fileID: 6792042989827225386, guid: 65104a8fc20ee4e15a998213eb61d8ed, type: 3}
       propertyPath: destroyAfter
       value: 1
       objectReference: {fileID: 0}
@@ -3576,6 +3582,7 @@ MonoBehaviour:
   - {fileID: 1888437617}
   - {fileID: 883508374}
   - {fileID: 1077215398}
+  hitSound: {fileID: 8300000, guid: 32213d7cccbe3704ab5fe722a07f1961, type: 3}
 --- !u!1 &1888437615
 GameObject:
   m_ObjectHideFlags: 0

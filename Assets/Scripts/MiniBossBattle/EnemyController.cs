@@ -4,13 +4,14 @@ public class EnemyController : MonoBehaviour
 {
     public Transform player; // Reference to the player's transform
     public GameObject projectilePrefab; // Reference to the projectile prefab
-    //public Transform shootPoint; // Reference to the point from where projectiles will be shot
     public float moveSpeed = 0.4f; // Speed at which the enemy moves
     public float projectileSpeed = 10f; // Speed of the projectile
     public float fireRate = 1f; // Rate of fire in shots per second
     public float followDistance = 4f; // Distance at which the enemy starts following the player
     public float stopDistance = 1f; // Distance at which the enemy stops following the player
     public float projectileLifetime = 1.5f;
+    public AudioClip shootSound; // Sound effect to play when shooting
+    private AudioSource audioSource;
 
     private EdgeCollider2D[] edgeColliders; // Array to store all edge colliders in the scene
     private bool isFollowingPlayer = false; // Flag to track if the enemy is following the player
@@ -20,6 +21,14 @@ public class EnemyController : MonoBehaviour
     {
         // Find all edge colliders in the scene
         edgeColliders = FindObjectsOfType<EdgeCollider2D>();
+
+        // Get the AudioSource component from the GameObject
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            // If AudioSource component is not found on this GameObject, add it
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -77,6 +86,16 @@ public class EnemyController : MonoBehaviour
 
     void Fire()
     {
+        // Play the shoot sound effect
+        if (shootSound != null)
+        {
+            audioSource.PlayOneShot(shootSound);
+        }
+        else
+        {
+            Debug.LogWarning("Shoot sound effect is not assigned.");
+        }
+
         // Calculate the direction towards the player
         Vector3 shootDirection = (player.position - transform.position).normalized;
 
@@ -97,6 +116,7 @@ public class EnemyController : MonoBehaviour
         Destroy(projectile, projectileLifetime);
     }
 }
+
 
 
 

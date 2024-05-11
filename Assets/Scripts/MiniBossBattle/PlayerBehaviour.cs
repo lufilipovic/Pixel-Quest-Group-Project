@@ -7,12 +7,22 @@ public class PlayerBehaviour : MonoBehaviour
     private int currentLives; // Current number of lives
 
     public Image[] hearts; // Array to hold heart images for the health bar
+    public AudioClip hitSound; // Sound effect to play when hit
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         currentLives = maxLives; // Set current lives to maximum lives at the start
         UpdateHealthBar(); // Update the health bar at the start
+
+        // Get the AudioSource component from the GameObject
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            // If AudioSource component is not found on this GameObject, add it
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     // Method to update the health bar
@@ -34,6 +44,16 @@ public class PlayerBehaviour : MonoBehaviour
         // Check if the triggered object is a projectile and not an enemy
         if (rb != null && other.gameObject.CompareTag("EnemyProjectile"))
         {
+            // Play the hit sound effect
+            if (hitSound != null)
+            {
+                audioSource.PlayOneShot(hitSound);
+            }
+            else
+            {
+                Debug.LogWarning("Hit sound effect is not assigned.");
+            }
+
             Destroy(other.gameObject);
             print("Enemy projectile hit the player!");
             TakeDamage(); // Decrease player lives
@@ -53,6 +73,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 }
+
 
 
 

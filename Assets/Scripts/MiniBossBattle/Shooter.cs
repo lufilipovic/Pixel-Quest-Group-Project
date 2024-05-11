@@ -6,6 +6,19 @@ public class Shooter : MonoBehaviour
     public GameObject projectilePrefab;
     public float projectileSpeed = 10f;
     public float projectileLifetime = 2f;
+    public AudioClip shootSound; // Sound effect to play when shooting
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        // Get the AudioSource component from the GameObject
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            // If AudioSource component is not found on this GameObject, add it
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
 
     void Update()
     {
@@ -17,6 +30,16 @@ public class Shooter : MonoBehaviour
 
     void Shoot()
     {
+        // Play the shoot sound effect
+        if (shootSound != null)
+        {
+            audioSource.PlayOneShot(shootSound);
+        }
+        else
+        {
+            Debug.LogWarning("Shoot sound effect is not assigned.");
+        }
+
         // Instantiate the projectile from the player's position
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
@@ -38,8 +61,9 @@ public class Shooter : MonoBehaviour
 
         // Destroy the projectile after a specified period of time
         Destroy(projectile, projectileLifetime);
-    } 
+    }
 }
+
 
 
 
