@@ -6,8 +6,8 @@ public class EnemyController : MonoBehaviour
     public GameObject projectilePrefab; // Reference to the projectile prefab
     public float moveSpeed = 0.4f; // Speed at which the enemy moves
     public float projectileSpeed = 10f; // Speed of the projectile
-    public float fireRate = 1f; // Rate of fire in shots per second
-    public float followDistance = 4f; // Distance at which the enemy starts following the player
+    public float fireRate = 2f; // Rate of fire in shots per second
+    public float followDistance = 7f; // Distance at which the enemy starts following the player
     public float stopDistance = 1f; // Distance at which the enemy stops following the player
     public float projectileLifetime = 1.5f;
     public AudioClip shootSound; // Sound effect to play when shooting

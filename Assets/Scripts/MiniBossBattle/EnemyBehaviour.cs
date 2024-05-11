@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public int maxLives = 3; // Maximum number of lives the enemy can have
+    public int maxLives = 6; // Maximum number of lives the enemy can have
     private int currentLives; // Current number of lives
 
     public Image[] hearts; // Array to hold heart images for the health bar

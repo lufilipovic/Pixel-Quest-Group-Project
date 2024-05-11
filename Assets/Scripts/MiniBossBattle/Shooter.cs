@@ -22,7 +22,8 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "MiniBossBattle" && Input.GetMouseButtonDown(0))
+        // Check if the active scene is either "MiniBossBattle" or "FinalBossBattle" and the mouse button is pressed
+        if ((SceneManager.GetActiveScene().name == "MiniBossBattle" || SceneManager.GetActiveScene().name == "FinalBossBattle") && Input.GetMouseButtonDown(0))
         {
             Shoot();
         }
@@ -63,6 +64,7 @@ public class Shooter : MonoBehaviour
         Destroy(projectile, projectileLifetime);
     }
 }
+
 
 
 
