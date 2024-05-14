@@ -619,12 +619,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415774956}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1c8a0111fa3c31447ab8164b85ce2759, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1212,8 +1212,8 @@ MonoBehaviour:
   player: {fileID: 1887148798}
   projectilePrefab: {fileID: 617602132215996409, guid: ddc1e62fd7a5ae440923ab1ee2f6e609, type: 3}
   moveSpeed: 0.4
-  projectileSpeed: 10
-  fireRate: 1
+  projectileSpeed: 4
+  fireRate: 2
   followDistance: 7
   stopDistance: 1
   projectileLifetime: 1.5
