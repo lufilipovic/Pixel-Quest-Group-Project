@@ -651,8 +651,8 @@ MonoBehaviour:
   player: {fileID: 1887148798}
   projectilePrefab: {fileID: 617602132215996409, guid: ddc1e62fd7a5ae440923ab1ee2f6e609, type: 3}
   moveSpeed: 0.4
-  projectileSpeed: 10
-  fireRate: 1
+  projectileSpeed: 3.5
+  fireRate: 2
   followDistance: 7
   stopDistance: 1
   projectileLifetime: 1.5
