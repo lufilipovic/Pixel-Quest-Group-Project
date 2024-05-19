@@ -796,10 +796,23 @@ MonoBehaviour:
   panel: {fileID: 91342966}
   textDisplay: {fileID: 1920573729}
   dialogTextLines:
-  - dadadad
-  - asdsd
-  - affvafaf
-  - dasdawda
+  - Press E to talk to the villager
+  - Brave knight, the prophecy has foretold your arrival.
+  - Our city is under siege by dark forces, and you are our chosen savior.
+  - The enemies have taken the sacred gem, which holds the power to protect our city,
+    and have hidden it deep within the castle.
+  - Your quest is to infiltrate the castle, defeat the enemies, and retrieve the
+    gem.
+  - The gem is locked away in the final room.
+  - To unlock the chest you will need to obtain two KEYS.
+  - 'To aid you on your journey, remember these commands:'
+  - Use WASD to move.
+  - Press I to access your inventory.
+  - Hit P to pause the game.
+  - Press E to pick up/ interact with items.
+  - Press M to mute the sound.
+  - 'Go now, brave knight! The fate of our city rests in your hands. '
+  - May fortune be with you!
 --- !u!58 &1070627707
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1905,20 +1918,44 @@ PrefabInstance:
     m_TransformParent: {fileID: 1975628724}
     m_Modifications:
     - target: {fileID: 5126465944757623553, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126465944757623553, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
       propertyPath: m_fontColor.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5126465944757623553, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
       propertyPath: m_fontColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5126465944757623553, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
       propertyPath: m_fontColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126465944757623553, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5126465944757623553, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278190080
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126465944757623555, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 808.173
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126465944757623555, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90.3178
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126465944757623555, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.2686
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126465944757623555, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.3938
       objectReference: {fileID: 0}
     - target: {fileID: 5126465946015380051, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
       propertyPath: m_Name
@@ -1958,11 +1995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5126465946015380052, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 586.9
+      value: 773.9928
       objectReference: {fileID: 0}
     - target: {fileID: 5126465946015380052, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -0.1270752
+      value: 38.981
       objectReference: {fileID: 0}
     - target: {fileID: 5126465946015380052, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1994,11 +2031,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5126465946015380052, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 35.279
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5126465946015380052, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -451.27368
+      value: -383.44592
       objectReference: {fileID: 0}
     - target: {fileID: 5126465946015380052, guid: e6bf442af395547dd8dbff2668d34d87, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
