@@ -3709,6 +3709,7 @@ MonoBehaviour:
   - {fileID: 762107372}
   - {fileID: 540518488}
   hitSound: {fileID: 8300000, guid: 32213d7cccbe3704ab5fe722a07f1961, type: 3}
+  gameOverPanel: {fileID: 1619000578}
 --- !u!1001 &1905797659
 PrefabInstance:
   m_ObjectHideFlags: 0

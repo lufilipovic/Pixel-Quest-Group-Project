@@ -10,6 +10,8 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioClip hitSound; // Sound effect to play when hit
     private AudioSource audioSource;
 
+    public GameObject gameOverPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +71,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             // If lives reach zero or below, destroy the player object
             Destroy(gameObject);
-            // You might want to add some game over logic here as well
+            gameOverPanel.SetActive(true);
         }
     }
 }
