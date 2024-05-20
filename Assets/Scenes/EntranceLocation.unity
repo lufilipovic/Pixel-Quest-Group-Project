@@ -1842,7 +1842,7 @@ EdgeCollider2D:
   - {x: -6.3628407, y: -2.5348296}
   - {x: -7.919476, y: -3.5507731}
   - {x: -8.291581, y: -1.3937261}
-  - {x: -6.505944, y: -0.10475659}
+  - {x: -7.3612514, y: 0.4369377}
   - {x: -7.3751326, y: 1.1600763}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
@@ -1907,6 +1907,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1887148798}
+    - target: {fileID: 1582377961407211616, guid: a6d5ba29dd0e346f58247663397403aa, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6d5ba29dd0e346f58247663397403aa, type: 3}
 --- !u!1001 &5126465946060585504
