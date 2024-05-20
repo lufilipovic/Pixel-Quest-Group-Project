@@ -10,6 +10,8 @@ public class EnemyBehaviour : MonoBehaviour
     public AudioClip hitSound; // Sound effect to play when hit
     private AudioSource audioSource;
 
+    public GameObject bossLoot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +64,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             // If lives reach zero or below, destroy the enemy object
             Destroy(gameObject);
+            bossLoot.SetActive(true);
         }
     }
 

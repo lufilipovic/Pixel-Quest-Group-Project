@@ -4040,7 +4040,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Some text will be added here about the game
+  m_text: 'Advanced Game Development Game made by:
+
+    Nikita Dolgov
+
+    &
+
+    Lucija
+    Filipovic'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 88c8bfb14b36a4e6599532a38b211fcc, type: 2}
   m_sharedMaterial: {fileID: 3242511952766561662, guid: 88c8bfb14b36a4e6599532a38b211fcc, type: 2}

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1443210884118748052}
   - component: {fileID: 1443210884118748075}
   - component: {fileID: 1443210884118748074}
-  - component: {fileID: 1582377961407211616}
   m_Layer: 0
   m_Name: Pet
   m_TagString: Untagged
@@ -123,37 +122,3 @@ MonoBehaviour:
   target: {fileID: 0}
   followDistance: 2
   speed: 2
---- !u!68 &1582377961407211616
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443210884118748073}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.8601606, y: -1.607647}
-  - {x: 1.1178565, y: -2.1264114}
-  - {x: -1.3114533, y: -2.0866508}
-  - {x: -2.6647468, y: -0.9929085}
-  - {x: -2.0542674, y: 0.17450333}
-  - {x: -1.0487866, y: -0.16638184}
-  - {x: -1.1416421, y: 1.6097221}
-  - {x: -0.72218084, y: 2.1152916}
-  - {x: 0.04904461, y: 1.5959778}
-  - {x: 0.8685274, y: 1.6286201}
-  - {x: 1.4765635, y: 2.0699005}
-  - {x: 2.3340044, y: 1.3653297}
-  - {x: 1.8085499, y: 0.5923538}
-  - {x: 0.8534744, y: -1.6345062}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
