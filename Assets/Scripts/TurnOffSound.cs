@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TurnOffSound : MonoBehaviour
-
 {
     private bool isMuted = false;
+
+    void Start()
+    {
+        // Load the mute state from PlayerPrefs
+        isMuted = PlayerPrefs.GetInt("MuteState", 0) == 1;
+        ToggleAudioSources(isMuted);
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,6 +24,10 @@ public class TurnOffSound : MonoBehaviour
 
             // Mute or unmute all AudioSources in the scene
             ToggleAudioSources(isMuted);
+
+            // Save the mute state to PlayerPrefs
+            PlayerPrefs.SetInt("MuteState", isMuted ? 1 : 0);
+            PlayerPrefs.Save();
         }
     }
 
