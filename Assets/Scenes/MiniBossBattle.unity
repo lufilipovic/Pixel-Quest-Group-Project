@@ -331,7 +331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &413053960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,7 +564,6 @@ GameObject:
   m_Component:
   - component: {fileID: 848559050}
   - component: {fileID: 848559049}
-  - component: {fileID: 848559051}
   - component: {fileID: 848559056}
   - component: {fileID: 848559052}
   - component: {fileID: 848559054}
@@ -643,20 +642,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &848559051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848559048}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88901e1fc9011467796e5b5189a0246c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 2
-  interactableObject: {fileID: 848559048}
 --- !u!61 &848559052
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -725,6 +710,7 @@ MonoBehaviour:
   - {fileID: 1993146719}
   - {fileID: 895669846}
   hitSound: {fileID: 8300000, guid: 32213d7cccbe3704ab5fe722a07f1961, type: 3}
+  bossLoot: {fileID: 413053959}
 --- !u!50 &848559056
 Rigidbody2D:
   serializedVersion: 4
