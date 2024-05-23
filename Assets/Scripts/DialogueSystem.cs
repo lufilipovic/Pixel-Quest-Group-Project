@@ -7,14 +7,17 @@ public class DialogueSystem : MonoBehaviour
     public CanvasRenderer panel;
     public TMP_Text textDisplay;
     public string[] dialogTextLines;
+    public AudioClip typingSound;  // Add this line
+    private AudioSource audioSource;  // Add this line
     private int index = 0;
 
     private bool isTyping = false;
     private bool activeDialog = false;
-    private bool dialogueTriggered = false;  // Track if the dialogue has been triggered
+    private bool dialogueTriggered = false;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();  // Initialize the audio source
         ResetDialog();
     }
 
@@ -35,14 +38,11 @@ public class DialogueSystem : MonoBehaviour
     {
         Debug.Log("StartDialog called");
 
-        // Check if the dialogue has already been triggered
         if (dialogueTriggered)
         {
-            //Debug.Log("Dialogue already triggered");
             return;
         }
 
-        // Set the flag to indicate that the dialogue has been triggered
         dialogueTriggered = true;
 
         ResetDialog();
@@ -54,7 +54,6 @@ public class DialogueSystem : MonoBehaviour
 
     public void ContinueDialog()
     {
-        //Debug.Log("ContinueDialog called");
         if (isTyping) return;
         index += 1;
 
@@ -71,22 +70,27 @@ public class DialogueSystem : MonoBehaviour
     public void SkipDialog()
     {
         Debug.Log("SkipDialog called");
-        StopAllCoroutines();  // Stop any ongoing typing coroutine
-        ResetDialog();        // Reset the dialogue system
+        StopAllCoroutines();
+        ResetDialog();
     }
 
     IEnumerator Typing()
     {
-        //Debug.Log("Typing coroutine started");
         isTyping = true;
         textDisplay.SetText("");
         foreach (char letter in dialogTextLines[index].ToCharArray())
         {
             textDisplay.text += letter;
-            yield return new WaitForSecondsRealtime(0.02f);
+
+            // Play the typing sound effect for each character
+            if (typingSound != null)
+            {
+                audioSource.PlayOneShot(typingSound);
+            }
+
+            yield return new WaitForSecondsRealtime(0.01f);
         }
         isTyping = false;
-        //Debug.Log("Typing coroutine finished");
     }
 
     private void ResetDialog()
@@ -99,3 +103,4 @@ public class DialogueSystem : MonoBehaviour
         activeDialog = false;
     }
 }
+
