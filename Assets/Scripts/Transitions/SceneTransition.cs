@@ -27,8 +27,6 @@ public class SceneTransition : MonoBehaviour
             }
             else
             {
-                Debug.Log("Player needs to interact with the NPCVillager first.");
-
                 errorPanel.SetActive(true);
             }
         }

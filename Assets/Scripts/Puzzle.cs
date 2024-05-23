@@ -20,6 +20,8 @@ public class Puzzle : MonoBehaviour
     private readonly string expectedCode3 = "F";
     private readonly string expectedCode4 = "D";
 
+    public TextMeshProUGUI errorMessage;
+
     public void CheckCode()
     {
         string input1 = inputField1.text.ToUpper();
@@ -30,14 +32,16 @@ public class Puzzle : MonoBehaviour
         if (input1 == expectedCode1 && input2 == expectedCode2 &&
             input3 == expectedCode3 && input4 == expectedCode4)
         {
-            Debug.Log("Correct code entered!");
+            Debug.Log("Correct chords entered!");
+            errorMessage.text = "Correct chords entered!";
             keyObject.SetActive(true);
             panel.SetActive(false);
 
         }
         else
         {
-            Debug.Log("Wrong code entered.");
+            Debug.Log("Wrong chords entered.");
+            errorMessage.text = "Wrong chords entered. Try Again!";
         }
     }
 }

@@ -18,10 +18,7 @@ public class NPCVillager : MonoBehaviour
 
     private void StartDialogue()
     {
-        // Set the interaction flag to true when the dialog starts
         sceneTransition.interacted = true;
-
-        // Start the dialogue
         dialogueSystem.StartDialog();
     }
 }
