@@ -15,6 +15,8 @@ public class DialogueSystem : MonoBehaviour
     private bool activeDialog = false;
     private bool dialogueTriggered = false;
 
+    //public SceneTransition sceneTransition;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();  // Initialize the audio source
@@ -44,6 +46,9 @@ public class DialogueSystem : MonoBehaviour
         }
 
         dialogueTriggered = true;
+
+        //sceneTransition.interacted = true; // Set the flag here
+        //Debug.Log("Player has completed the interaction with the NPCVillager.");
 
         ResetDialog();
         Time.timeScale = 0f;
