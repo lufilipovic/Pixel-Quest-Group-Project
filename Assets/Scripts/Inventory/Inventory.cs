@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,19 +6,18 @@ public class Inventory : MonoBehaviour
     #region Singleton
 
     public static Inventory instance;
-    //public GameObject gameManager;
+
     void Awake()
     {
         if (instance != null && instance != this)
         {
-            //Destroy(gameObject); // Destroy duplicate Inventory objects
+            Destroy(gameObject);
             return;
         }
 
         instance = this;
-        DontDestroyOnLoad(gameObject); // Persist the Inventory object across scene changes
+        DontDestroyOnLoad(gameObject);
     }
-
 
     #endregion
 
@@ -41,8 +39,7 @@ public class Inventory : MonoBehaviour
             }
             items.Add(item);
 
-            if (onItemChangedCallback != null)
-                onItemChangedCallback.Invoke();
+            onItemChangedCallback?.Invoke();
         }
 
         return true;
@@ -51,8 +48,30 @@ public class Inventory : MonoBehaviour
     public void Remove(Item item)
     {
         items.Remove(item);
+        onItemChangedCallback?.Invoke();
+    }
 
-        if (onItemChangedCallback != null)
-            onItemChangedCallback.Invoke();
+    public bool HasItem(string itemName)
+    {
+        foreach (Item item in items)
+        {
+            if (item.name == itemName)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Item GetItem(string itemName)
+    {
+        foreach (Item item in items)
+        {
+            if (item.name == itemName)
+            {
+                return item;
+            }
+        }
+        return null;
     }
 }

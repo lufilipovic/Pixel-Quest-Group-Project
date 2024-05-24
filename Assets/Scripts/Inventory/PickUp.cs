@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Sprites;
 using UnityEngine;
 
 public class PickUp : MonoBehaviour
@@ -9,6 +10,8 @@ public class PickUp : MonoBehaviour
 
     private GameObject player;
     private Inventory inventory;
+
+    public SceneTransition sceneTransition;
 
     private void Start()
     {
@@ -40,6 +43,24 @@ public class PickUp : MonoBehaviour
         // Add the item to the inventory
         if (inventory.Add(item))
         {
+            // Display a message in the console
+            //Debug.Log($"Picked up item: {item.name}");
+
+            // Check if the picked-up item is the Puzzle Key
+            if (item.name == "Puzzle Key")
+            {
+                sceneTransition.interacted = true;
+                Debug.Log("Puzzle Key picked up.");
+            }
+
+            // Check if the picked - up item is the Boss Key
+            if (item.name == "Boss Key")
+            {
+                sceneTransition.interacted = true;
+                Debug.Log("Boss Key picked up.");
+            }
+
+
             // Disable rendering so the object is not visible
             GetComponent<SpriteRenderer>().enabled = false;
             // Set the object as picked up

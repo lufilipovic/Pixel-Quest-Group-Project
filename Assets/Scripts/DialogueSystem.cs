@@ -15,6 +15,8 @@ public class DialogueSystem : MonoBehaviour
     private bool activeDialog = false;
     private bool dialogueTriggered = false;
 
+    //public SceneTransition sceneTransition;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();  // Initialize the audio source
@@ -44,7 +46,6 @@ public class DialogueSystem : MonoBehaviour
         }
 
         dialogueTriggered = true;
-
         ResetDialog();
         Time.timeScale = 0f;
         panel.gameObject.SetActive(true);
