@@ -50,14 +50,14 @@ public class PickUp : MonoBehaviour
             if (item.name == "Puzzle Key")
             {
                 sceneTransition.interacted = true;
-                Debug.Log("Puzzle Key picked up. Scene transition interaction set to true.");
+                Debug.Log("Puzzle Key picked up.");
             }
 
             // Check if the picked - up item is the Boss Key
             if (item.name == "Boss Key")
             {
                 sceneTransition.interacted = true;
-                Debug.Log("Boss Key picked up. Scene transition interaction set to true.");
+                Debug.Log("Boss Key picked up.");
             }
 
 

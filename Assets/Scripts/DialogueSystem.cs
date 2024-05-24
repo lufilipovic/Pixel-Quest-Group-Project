@@ -46,10 +46,6 @@ public class DialogueSystem : MonoBehaviour
         }
 
         dialogueTriggered = true;
-
-        //sceneTransition.interacted = true; // Set the flag here
-        //Debug.Log("Player has completed the interaction with the NPCVillager.");
-
         ResetDialog();
         Time.timeScale = 0f;
         panel.gameObject.SetActive(true);
