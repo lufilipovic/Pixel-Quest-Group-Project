@@ -37,3 +37,4 @@ public class SceneTransition : MonoBehaviour
         errorPanel.SetActive(false);
     }
 }
+
