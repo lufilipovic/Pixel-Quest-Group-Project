@@ -40,8 +40,6 @@ public class PickUp : MonoBehaviour
         // Add the item to the inventory
         if (inventory.Add(item))
         {
-            // Display a message in the console
-            //Debug.Log($"Picked up item: {item.name}");
 
             // Check if the picked-up item is the Puzzle Key
             if (item.name == "Puzzle Key")

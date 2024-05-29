@@ -1,75 +1,73 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
-
-    public GameObject howToPlayPanel;
+    public GameObject howToPlayPanel; // Reference to the how-to-play panel GameObject
 
     private void Start()
     {
-        howToPlayPanel.SetActive(false);
-        Time.timeScale = 1f;
+        howToPlayPanel.SetActive(false); // Ensure the how-to-play panel is initially inactive
+        Time.timeScale = 1f; // Ensure normal time scale at start
     }
 
     private void Update()
     {
+        // Check if the 'P' key is pressed
         if (Input.GetKeyDown(KeyCode.P))
         {
+            // Toggle between pausing and resuming the game
             if (IsGamePaused())
             {
                 ResumeGame();
-                print("Resuming game: " + Time.timeScale);
+                Debug.Log("Resuming game: " + Time.timeScale);
             }
             else
             {
                 PauseGame();
-                print("Pausing game: " + Time.timeScale);
+                Debug.Log("Pausing game: " + Time.timeScale);
             }
         }
     }
 
+    // Method to start playing the game (load next scene in build index)
     public void PlayGame()
     {
-        //Load next scene in the build level
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    // Method to exit the game
     public void ExitGame()
     {
-        print("Game Exited");
-
-        //Quit the application
-        Application.Quit();
+        Debug.Log("Game Exited");
+        Application.Quit(); // Quit the application
     }
 
+    // Method to pause the game
     public void PauseGame()
     {
-        Time.timeScale = 0f;
-        howToPlayPanel.SetActive(true);
-        print("Pausing game: " + Time.timeScale);
+        Time.timeScale = 0f; // Set time scale to 0 to pause the game
+        howToPlayPanel.SetActive(true); // Show the how-to-play panel
+        Debug.Log("Pausing game: " + Time.timeScale);
     }
 
+    // Method to resume the game
     public void ResumeGame()
     {
-        Time.timeScale = 1f;
-        howToPlayPanel.SetActive(false);
-        print("Resuming game: " + Time.timeScale);
+        Time.timeScale = 1f; // Set time scale back to 1 to resume the game
+        howToPlayPanel.SetActive(false); // Hide the how-to-play panel
+        Debug.Log("Resuming game: " + Time.timeScale);
     }
 
     // Function to check if the game is currently paused
     private bool IsGamePaused()
     {
-        return Time.timeScale == 0f;
+        return Time.timeScale == 0f; // Return true if time scale is 0 (game is paused)
     }
 
+    // Method to load a specific scene by name
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-
     }
-
-
 }

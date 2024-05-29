@@ -27,12 +27,6 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the collision is with a player projectile

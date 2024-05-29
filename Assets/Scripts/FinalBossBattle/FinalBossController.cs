@@ -81,7 +81,7 @@ public class FinalBossController : MonoBehaviour
 
     void ConstrainToEdgeCollider(EdgeCollider2D edgeCollider)
     {
-        // Implementation remains the same
+
     }
 
 
