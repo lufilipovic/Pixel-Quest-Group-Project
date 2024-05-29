@@ -4189,6 +4189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pet
       objectReference: {fileID: 0}
+    - target: {fileID: 1443210884118748074, guid: a6d5ba29dd0e346f58247663397403aa, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2314520609751197273}
     - target: {fileID: 2538482400589487169, guid: a6d5ba29dd0e346f58247663397403aa, type: 3}
       propertyPath: m_Size.x
       value: 8.691287
